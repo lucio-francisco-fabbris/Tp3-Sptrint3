@@ -13,8 +13,10 @@ export async function obtenerTodosSueperHeroesController(req, res) {
 export async function nuevoSuperHeroesController(req, res) {
     try {
         const data = req.body;
+
         data.poderes = data.poderes.split(',').map(poder => poder.trim());
-        const nuevoSuperHero = await nuevoSuperHeroes(data);
+
+        await nuevoSuperHeroes(data);
         res.redirect('/api/superheroes');
     } catch (error) {
         console.log("ERROR REAL:", error);
@@ -26,8 +28,9 @@ export async function actualizarSuperHeroesController(req, res) {
     try {
         const { id } = req.params;
         const data = req.body;
-        const superHeroActualizado = await actualizarSuperHeroes(id, data);
-        res.status(200).json(superHeroActualizado);
+        data.poderes = data.poderes.split(',').map(poder => poder.trim());
+        await actualizarSuperHeroes(id, data);
+        res.redirect('/api/superheroes');
     } catch (error) {
         res.status(500).json({ error: "Error al actualizar el superhéroe"});
     }
@@ -36,18 +39,8 @@ export async function actualizarSuperHeroesController(req, res) {
 export async function eliminarSuperHeroesPorIdController(req, res) {
     try {
         const { id } = req.params;
-        const superHeroEliminado = await eliminarSuperHeroesPorId(id);
-        res.status(200).json(superHeroEliminado);
-    } catch (error) {
-        res.status(500).json({ error: "Error al eliminar el superhéroe"});
-    }
-};
-
-export async function eliminarSuperHeroesPorNombreController(req, res) {
-    try {
-        const { nombre } = req.params;
-        const superHeroEliminado = await eliminarSuperHeroesPorNombre(nombre);
-        res.status(200).json(superHeroEliminado);
+        await eliminarSuperHeroesPorId(id);
+        res.redirect('/api/superheroes');
     } catch (error) {
         res.status(500).json({ error: "Error al eliminar el superhéroe"});
     }

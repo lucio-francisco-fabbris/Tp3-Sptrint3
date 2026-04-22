@@ -1,0 +1,13 @@
+<h1>Editar Superhéroe</h1>
+
+<form action="/api/superheroes/actualizar/<%= superHero._id %>" method="post">
+    <input type="text" name="nombreSuperheroe" value="<% superHero.nombreSuperheroe %>">
+
+    <input type="text" name="nombreReal" value="<% superHero.nombreReal %>">
+
+    <input type="text" name="edad" value="<% superHero.edad %>">
+
+    <input type="text" name="poderes" value="<% superHero.poderes.join(', ') %>" >
+
+    <button type="submit">Actualizar</button>
+</form>

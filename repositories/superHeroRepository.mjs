@@ -9,6 +9,10 @@ class SuperHeroRepository {
         return await superHero.create(data);
     }
 
+    async obtenerSuperHeroPorId(id) {
+        return await superHero.findById(id);
+    }
+
     async actualizarSuperHero(id, update) {
         return await superHero.findByIdAndUpdate(id, update, { new: true });
     }

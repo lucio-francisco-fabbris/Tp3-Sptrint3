@@ -15,10 +15,6 @@ connectDB();
 
 app.use('/api', superHeroRoutes);
 
-app.get('/agregar', (req, res) => {
-    res.render('addSuperHero');
-});
-
 app.use((req, res) => {
     res.status(404).json({ message: 'Endpoint no encontrado' });
 });

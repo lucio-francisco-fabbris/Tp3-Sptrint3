@@ -1,7 +1,30 @@
+<style>
+    body {font-family: Arial;}
+    li {margin-bottom: 10px;}
+    button {margin-left: 10px;}
+</style>
+
 <h1>Dashboard de superhéroes</h1>
 
 <ul>
+
     <% superHeroes.forEach(hero => { %>
-        <li><%= hero.nombreSuperheroe %></li>
+
+        <li>
+
+            <strong><%= hero.nombreSuperheroe %></strong> - <%= hero.nombreReal %>
+
+        <a href="/api/superheroes/editar/<%= hero._id %>">Editar</a>
+ 
+         <form action="/api/superheroes/eliminar/id/<%= hero._id %>" method="post"  style="display:inline;">
+            <button type="submit" onclick="return confirm('¿Seguro que quierés eliminar a este superhéroe?')">Eliminar</button>
+         </form>
+         
+        </li>
         <% }) %>
+
+        <a href="/api/superheroes/agregar">
+                <button>Crear nuevo Superhéroe</button>
+            </a>
+
 </ul>
