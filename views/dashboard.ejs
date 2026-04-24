@@ -6,13 +6,18 @@
 
 <h1>Dashboard de superhéroes</h1>
 
+<a href="/api/superheroes/agregar">
+                    <button>Crear nuevo Superhéroe</button>
+                </a>
+
+
 <ul>
 
     <% superHeroes.forEach(hero => { %>
 
         <li>
 
-            <strong><%= hero.nombreSuperheroe %></strong> - <%= hero.nombreReal %>
+            <strong><%= hero.nombreSuperheroe %></strong> - Edad: <%= hero.edad %>
 
         <a href="/api/superheroes/editar/<%= hero._id %>">Editar</a>
  
@@ -22,9 +27,5 @@
          
         </li>
         <% }) %>
-
-        <a href="/api/superheroes/agregar">
-                <button>Crear nuevo Superhéroe</button>
-            </a>
 
 </ul>

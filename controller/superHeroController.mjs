@@ -1,4 +1,4 @@
-import { obtenerTodosSuperHeroes, nuevoSuperHeroes, actualizarSuperHeroes, eliminarSuperHeroesPorId, eliminarSuperHeroesPorNombre } from "../service/superHeroService.mjs";
+import { obtenerTodosSuperHeroes, nuevoSuperHeroes, actualizarSuperHeroes, eliminarSuperHeroesPorId } from "../service/superHeroService.mjs";
 
 export async function obtenerTodosSueperHeroesController(req, res) {
     try {

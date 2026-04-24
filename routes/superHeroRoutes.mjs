@@ -1,5 +1,5 @@
 import express from 'express';
-import { obtenerTodosSueperHeroesController, nuevoSuperHeroesController, actualizarSuperHeroesController, eliminarSuperHeroesPorIdController, eliminarSuperHeroesPorNombreController } from '../controller/superHeroController.mjs';
+import { obtenerTodosSueperHeroesController, nuevoSuperHeroesController, actualizarSuperHeroesController, eliminarSuperHeroesPorIdController } from '../controller/superHeroController.mjs';
 import { obtenerSuperHeroesPorId } from '../service/superHeroService.mjs';
 import { superHeroValidator, manejarErrores } from '../validators/superHeroValidator.mjs';
 

@@ -19,7 +19,3 @@ export async function actualizarSuperHeroes(id, update) {
 export async function eliminarSuperHeroesPorId(id) {
     return await SuperHeroRepository.eliminarSuperheroId(id);
 };
-
-export async function eliminarSuperHeroesPorNombre(nombre) {
-    return await SuperHeroRepository.eliminaSuperHeroNombre(nombre);
-};

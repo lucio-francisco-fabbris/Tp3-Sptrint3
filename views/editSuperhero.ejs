@@ -1,13 +1,39 @@
+<style>
+    body {font-family: Arial;}
+    button {margin-left: 10px;}
+</style>
+
 <h1>Editar Superhéroe</h1>
 
-<form action="/api/superheroes/actualizar/<%= superHero._id %>" method="post">
-    <input type="text" name="nombreSuperheroe" value="<% superHero.nombreSuperheroe %>">
+<form action="/api/superheroes/actualizar/<%= superHero._id %>" method="post" >
 
-    <input type="text" name="nombreReal" value="<% superHero.nombreReal %>">
+    <div> 
+        <label>Nombre del superhéroe:</label> <input type="text" name="nombreSuperheroe" value="<% superHero.nombreSuperheroe %>">
+    </div>
 
-    <input type="text" name="edad" value="<% superHero.edad %>">
+    <div> 
+        <label>Nombre real:</label> <input type="text" name="nombreReal" value="<% superHero.nombreReal %>">
+    </div>
 
-    <input type="text" name="poderes" value="<% superHero.poderes.join(', ') %>" >
+    <div> 
+        <label>Edad:</label> <input type="text" name="edad" value="<% superHero.edad %>">
+    </div>
+
+    <div> 
+        <label>Poderes:</label> <input type="text" name="poderes" value="<% superHero.poderes.join(', ') %>">
+    </div>
+    
+    <div> 
+        <label>Enemigos:</label> <input type="text" name="enemigos" value="<% superHero.enemigos.join(', ') %>">
+    </div>
+
+    <div>
+        <label>Aliados:</label> <input type="text" name="aliados" value="<% superHero.aliados.join(', ') %>">
+    </div>
+
+    <div> 
+        <label>Creador:</label> <input type="text" name="creador" value="<% superHero.creador %>">
+    </div>
 
     <button type="submit">Actualizar</button>
 </form>

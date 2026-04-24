@@ -20,10 +20,6 @@ class SuperHeroRepository {
     async eliminarSuperheroId(id) {
         return await superHero.findByIdAndDelete(id);
     }
-
-    async eliminaSuperHeroNombre(nombre) {
-        return await superHero.findOneAndDelete({ nombre });
-    }
 };
 
 export default new SuperHeroRepository();

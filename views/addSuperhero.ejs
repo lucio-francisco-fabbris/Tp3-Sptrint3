@@ -1,13 +1,24 @@
+<style>
+    body {font-family: Arial;}
+    button {margin-left: 10px;}
+</style>
+
 <h1>Agregar Superhéroe</h1>
 
 <form action="/api/superheroes/agregar" method="post">
-    <input type="text" name="nombreSuperheroe" placeholder="Nombre Superhéroe">
+    <div><label>Nombre del superhéroe:</label><input type="text" name="nombreSuperheroe"></div>
 
-    <input type="text" name="nombreReal" placeholder="Nombre Real">
+    <div><label>Nombre real:</label><input type="text" name="nombreReal"></div>
 
-    <input type="text" name="edad" placeholder="Edad">
+    <div><label>Edad:</label><input type="text" name="edad"></div>
 
-    <input type="text" name="poderes" placeholder="Poderes">
+    <div><label>Poderes:</label><input type="text" name="poderes"></div>
+
+    <div><label>Enemigos:</label><input type="text" name="enemigos"></div>
+
+    <div><label>Aliados:</label><input type="text" name="aliados"></div>
+
+    <div><label>Creador:</label><input type="text" name="creador"></div>
 
     <button type="submit">Crear</button>
 </form>
